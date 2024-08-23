@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player | Unblocked</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="https://files.catbox.moe/jbe17h.mp4" type="video/mp4"> <!-- Replace with your video URL -->
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Music Player Container -->
+    <div class="music-player">
+        <audio id="audio-player" controls hidden></audio>
+
+        <!-- Song list buttons -->
+        <div class="song-list" id="song-list">
+            <!-- Buttons with thumbnails will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <!-- Progress bar container -->
+        <div class="progress-container">
+            <input type="range" id="progress-bar" class="progress-bar" min="0" max="100" step="0.1" value="0">
+        </div>
+        <!-- Control buttons below the progress bar -->
+        <div class="controls">
+            <button id="prev-btn" class="control-btn"><i class="fas fa-backward"></i></button>
+            <button id="play-pause-btn" class="control-btn">
+                <img id="play-pause-icon" src="https://files.catbox.moe/0av28i.png" alt="Play/Pause"> <!-- Replace with your play icon URL -->
+            </button>
+            <button id="next-btn" class="control-btn"><i class="fas fa-forward"></i></button>
+            <input type="range" id="volume-control" class="volume-control" min="0" max="1" step="0.01" value="1">
+        </div>
+    </div>
+
+    <!-- Song Suggestion Form -->
+    <div class="suggestion-form">
+        <input type="text" id="song-suggestion" placeholder="Enter your song suggestion">
+        <label for="song-file" class="upload-button">
+            <img src="https://cdn.discordapp.com/attachments/1274630437230215179/1276605279802359829/vecteezy_transparent-upload-icon_15337675.png?ex=66ca22d0&is=66c8d150&hm=7e4464794ab50c5357ea26106b7f5221e40cc2ce2e31ad4842d3162823b5194e&" alt="Upload"> <!-- Replace with your image URL -->
+        </label>
+        <input type="file" id="song-file" accept="audio/mp3">
+        <button id="suggest-btn">Send Suggestion</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

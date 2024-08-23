@@ -1,0 +1,214 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Hide scroll bars */
+    position: relative;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the entire screen */
+    z-index: -1; /* Send video behind other elements */
+}
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background: none; /* No background box */
+    position: relative;
+    z-index: 1; /* Ensure player is above the video */
+}
+
+.song-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.song-list button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex: 1 1 30%; /* Allows buttons to grow/shrink and take up full width */
+    max-width: 250px;
+    margin: 7px;
+    text-align: center;
+    color: white;
+}
+
+
+.song-list button img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: transform 0.3s;
+}
+
+.song-list button:hover img {
+    transform: scale(1.05);
+}
+
+/* Control panel styling */
+.control-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.466); /* White background for the control panel */
+    padding: 4px 4px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    padding: 0 10px;
+    position: relative;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0); /* White background behind progress bar */
+}
+
+.progress-bar {
+    width: 100%;
+    background: #e0e0e083; /* Grey background for the progress bar */
+    height: 8px; /* Adjust height for the progress bar */
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px; /* Adjust height for the thumb */
+    width: 16px; /* Adjust width for the thumb */
+    background: #888; /* Grey color for the thumb */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.progress-bar::-moz-range-thumb {
+    height: 16px; /* Adjust height for the thumb */
+    width: 16px; /* Adjust width for the thumb */
+    background: #888; /* Grey color for the thumb */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.control-btn img {
+    width: 30px; /* Adjust size of the play/pause icon */
+    height: auto;
+}
+
+.volume-control {
+    margin: 0 10px;
+    width: 60px; /* Reduced width for the volume control */
+    background: #e0e0e0; /* Grey background for the volume control */
+}
+
+.volume-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px; /* Adjust height for the thumb */
+    width: 16px; /* Adjust width for the thumb */
+    background: #888; /* Grey color for the thumb */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.volume-control::-moz-range-thumb {
+    height: 16px; /* Adjust height for the thumb */
+    width: 16px; /* Adjust width for the thumb */
+    background: #888; /* Grey color for the thumb */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.audio-duration {
+    color: #333;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.suggestion-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#song-suggestion {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #cccccc62;
+    border-radius: 4px;
+}
+
+.upload-button {
+    background: none; /* No background, as we are using an image */
+    border: none; /* No border */
+    cursor: pointer;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.upload-button img {
+    width: 50px; /* Set the size of your upload button image */
+    height: auto;
+}
+.upload-button:hover {
+    background: #5b6eae; /* Darker blue on hover */
+}
+
+#song-file {
+    display: none; /* Hide the default file input */
+}
+
+#suggest-btn {
+    background: #43b581; /* Discord green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#suggest-btn:hover {
+    background: #38a1db; /* Darker green on hover */
+}
